@@ -1,0 +1,35 @@
+.portfolio-companies {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 60px;
+  padding: 30px 20px;
+  h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 67px;
+    color: #191618;
+  }
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .logo {
+      width: 220px;
+      height: 120px;
+      background-color: white;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+    }
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .portfolio-companies {
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,135 @@
+.slider-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: 60px;
+  padding: 30px 20px;
+  background-image: url("../assets/state-background.png");
+  background-repeat: no-repeat;
+  background-position: right 3.5rem top 80px;
+  h2 {
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 67px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  > select {
+    width: 220px;
+    height: 60px;
+    background-color: $primary-color;
+    border-radius: 124px;
+    border: none;
+    color: white;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 60px;
+    padding-left: 30px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("../assets/caret-down.png");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem top 50%;
+    background-size: 1rem auto;
+  }
+  .slider.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+  }
+  .slider {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+
+    .slide {
+      pointer-events: none;
+      img {
+        width: 520px;
+        height: 270px;
+        box-shadow: 0px 36px 36px 0px #0000001f;
+        border-radius: 6px;
+      }
+    }
+  }
+  .slide-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .arrow {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        background-color: aliceblue;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 36px 36px 0px #0000001f;
+        right: 20px;
+        bottom: 20px;
+        border: none;
+        cursor: pointer;
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      select {
+        width: 130px;
+        height: 56px;
+        background-color: white;
+        border-radius: 124px;
+        border: none;
+        color: #191618;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        padding-left: 20px;
+        box-shadow: 0px 24px 36px 0px #00000040;
+
+        cursor: pointer;
+        appearance: none;
+        background-image: url("../assets/pr-down.png");
+        background-repeat: no-repeat;
+        background-position: right 0.7rem top 50%;
+        background-size: 1.8rem auto;
+      }
+    }
+    .btn {
+      margin-right: 50px;
+      button {
+        background-color: $primary-color;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 22px 20px;
+        border-radius: 124px;
+        border: none;
+        color: white;
+        box-shadow: 0px 24px 36px 0px #00000040;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .slider-section {
+    background-size: 30rem;
+  }
+  .slider-section .slide-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

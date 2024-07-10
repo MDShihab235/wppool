@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WPPOOL Home Page</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script defer src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- This is header section contains with sticky navbar & _header.scss -->
+    <header class="header-section">
+      <nav id="navbar">
+        <div class="logo">
+          <img src="./assets/logo.png" id="logo" alt="logo" />
+        </div>
+        <div class="nav-links">
+            <div class="share" id="scroll-share">
+              <img src="./assets/share.png" id="share" alt="share button" >
+            </div>
+            <button id="nav-btn">Download the 2024 Report</button>
+            <div class="menu-div" onclick="showHideToggleMenu()">
+              <img src="./assets/menu.png"  alt="menu button" id="menu" class="menu"  >
+            </div>
+            
+        </div>
+        <div id="hamberger">
+          <div class="clicked-menu-section">
+            <div class="ham-nav-bar">
+              <div class="ham-share" id="scroll-share">
+                <img src="./assets/share.png" id="share" alt="share button" >
+              </div>
+              <button id="nav-btn">Download the 2024 Report</button>
+              <img src="./assets/cross.png" onclick="showHideToggleMenu()"  id="menu" alt="menu button" class="menu">
+            </div>
+            
+            <div class="content">
+              <p>The WPPOOL Index</p>
+              <p>All Companies</p>
+              <p>Potential Future Listings</p>
+              <p>State of USA</p>
+              <p>Stories & Ideas</p>
+              <p>About WPPOOL</p>
+              <p>WPPOOL Portfolio Companies</p>
+            </div>
+            <div class="last-p">
+              <p>Visit WPPOOL</p>
+            </div>
+          </div>
+        </div>
+            
+      </nav>
+      
+      
+      <div class="header">
+        <div class="revnue-list">
+          <div>
+            <span class="revenue">60</span>
+            <p>Companies</p>
+          </div>
+          <div> 
+            <span class="revenue">$100B</span>
+            <p>Market cap</p>
+          </div>
+          <div>
+            <span class="revenue">3.5x</span>
+            <p>Revenue multiple</p>
+          </div>
+          <div> 
+            <span class="revenue">60%</span>
+            <p>LTM avg. revenue growth rate</p>
+          </div>
+        
+        </div>
+        <div class="website-title">
+            <h1>The WPPOOL Index</h1>
+            <p>Monitor the performance of emerging, publicly traded, financial technology companies</p>
+        </div>
+        <div class="empty"></div>
+        <div class="down-arrow">
+            <img src="./assets/arrow_downward.png" alt="down arrow">
+        </div>
+        
+      </div>
+      <img src='./assets/header.png' alt="header" class="header-img">
+        <img src='./assets/rectangle.png' alt="header" class="rectangle">
+    </header>
+
+    <!-- Dashboard section & _dashboard.scss -->
+    <section class="dashboard-section ">
+      <nav>
+        <div class="logo"><img src="./assets/dash_logo.png" alt="logo" /></div>
+        <div class="nav-links">
+            <div class="share">
+            <img src="./assets/dash_share.png"  alt="share button" >
+
+            </div>
+            <button>Download the 2024 Report</button>
+            <img src="./assets/dash_menu.png" alt="menu button" class="menu">
+      </nav>
+      <div class="dashboard">
+        <ul class="side-bar">
+          <li><p>The Index</p><span>&#43;</span></li>
+          <li><p>The Index Tab Two</p><span>&#43;</span></li>
+          <li><p>The Index Tab Three</p><span>&#43;</span></li>
+          <li><p>The Index Tab Four</p><span>&#43;</span></li>
+          <li><p>The Index Tab Five</p><span>&#43;</span></li>
+        </ul>
+        <div class="stats">
+          <div class="head-line"><img src="./assets/Union.png" alt="union"><h2>The WPPOOL Index</h2></div>
+          <div class="index-percentage">
+            <div ><h3 class="wppool-index">+66.2%</h3><p class="wppool">WPPOOL Index</p></div>
+            <div ><h3  class="google-index">+26.6%</h3><p class="google">Goolge Index</p></div>
+            <div><h3 class="microsoft-index">+34.1%</h3><p class="microsoft">Microsoft</p></div>
+            <div ><h3 class="twitter-index">+17%</h3><p class="twitter"> Twitter Index</p></div>
+          </div>
+          <div class="filters-section">
+            <div class="down-buttons">
+              <select class="select-el">
+                <option value="sector">Sectors</option>
+              </select>
+              <select class="select-el">
+                <option value="ipo">Types of IPO</option>
+              </select>
+            </div>
+            <ul class="year-filter">
+              <li>1Y</li>
+              <li>YTD</li>
+              <li>6M</li>
+              <li>1M</li>
+              <li>1W</li>
+            </ul>
+          </div>
+          <div class="graph-section">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- All companies section & _allCompanies.scss -->
+    <section class="all-companies-section">
+      <div class="company-data">
+        <div class="data-head">
+          <h2>All Companies</h2>
+          <input type="text" placeholder="Search Companies">
+        </div>
+        <div class="all-data">
+          <table>
+            <tr>
+              <th>Company</th>
+              <th>Ticker <img src="./assets/down-arrow.png" alt=""> </th>
+              <th>Vertical</th>
+              <th>Price</th>
+              <th>Market Cap ($B)</th>
+              <th>Revenue Growth</th>
+              <th>Gross Margin</th>
+              <th>EV/Revenue</th>
+              <th>YTD Performance</th>
+            </tr>
+            <tr>
+              <td>Adyen</td>
+              <td>AFRM</td>
+              <td>Payments</td>
+              <td>$17.15</td>
+              <td>$50.5</td>
+              <td>49.0%</td>
+              <td>15.8%</td>
+              <td>6.3</td>
+              <td>24.3%</td>
+            </tr>
+            <tr>
+              <td>Affirm</td>
+              <td>AFRM</td>
+              <td>Lending</td>
+              <td>$16.12</td>
+              <td>$1.5</td>
+              <td>34.0%</td>
+              <td>53.0%</td>
+              <td>7.0</td>
+              <td>10.0%</td>
+            </tr>
+            <tr>
+              <td>Alkami Technology</td>
+              <td>ALKT</td>
+              <td>B2B SaaS</td>
+              <td>$16.27</td>
+              <td>$1.5</td>
+              <td>34.0%</td>
+              <td>53.0%</td>
+              <td>7.0</td>
+              <td>10.0%</td>
+            </tr>
+            <tr>
+              <td>AvidXchange</td>
+              <td>AVDX</td>
+              <td>Payments</td>
+              <td>$10.21</td>
+              <td>$2.0</td>
+              <td>27.0%</td>
+              <td>61.5%</td>
+              <td>6.0</td>
+              <td>10.5%</td>
+            </tr>
+            <tr>
+              <td>Bakkt Holdings</td>
+              <td>BKKT</td>
+              <td>Wealth</td>
+              <td>$1.32</td>
+              <td>$0.1</td>
+              <td>38%</td>
+              <td>--</td>
+              <td>0.4</td>
+              <td>13.8%</td>
+            </tr>
+            <tr>
+              <td>Virtu Financial Inc</td>
+              <td>VIRT</td>
+              <td>Wealth</td>
+              <td>$17.0</td>
+              <td>$3.1</td>
+              <td>-22.0%</td>
+              <td>38.2%</td>
+              <td>2.6</td>
+              <td>-17.8%</td>
+            </tr>
+            <tr>
+              <td>Adyen</td>
+              <td>AFRM</td>
+              <td>Payments</td>
+              <td>$17.15</td>
+              <td>$50.5</td>
+              <td>49.0%</td>
+              <td>15.8%</td>
+              <td>6.3</td>
+              <td>24.3%</td>
+            </tr>
+            <tr>
+              <td>Affirm</td>
+              <td>AFRM</td>
+              <td>Lending</td>
+              <td>$16.12</td>
+              <td>$4.7</td>
+              <td>32.0%</td>
+              <td>48.7%</td>
+              <td>4.9</td>
+              <td>77.1%</td>
+            </tr>
+            <tr>
+              <td>Alkami Technology</td>
+              <td>ALKT</td>
+              <td>B2B SaaS</td>
+              <td>$16.27</td>
+              <td>$1.5</td>
+              <td>34.0%</td>
+              <td>53.0%</td>
+              <td>7.0</td>
+              <td>10.0%</td>
+            </tr>
+            <tr>
+              <td>AvidXchange</td>
+              <td>AVDX</td>
+              <td>Payments</td>
+              <td>$10.21</td>
+              <td>$2.0</td>
+              <td>27.0%</td>
+              <td>61.5%</td>
+              <td>6.0</td>
+              <td>10.5%</td>
+            </tr>
+            
+          </table>
+        </div>
+      </div>
+      <div class="company-buttons">
+        <button>Download ‘All Companies’ Data</button>
+        <button>View Methodology</button>
+      </div>
+    </section>
+
+    <!-- Future Listings section & _futureListings.scss -->
+    <section class="future-listings">
+      <h2>Potential Future Listings</h2>
+      <p>Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+      <div class="brands-section">
+        <div class="brand"><img src="./assets/stripe.png" alt="stripe"></div>
+        <div class="brand"><img src="./assets/klarna.png" alt="klarna"></div>
+        <div class="brand"><img src="./assets/plaid.png" alt="plaid"></div>
+        <div class="brand"><img src="./assets/checkout.png" alt="checkout"></div>
+        <div class="brand"><img src="./assets/revolut.png" alt="revolut"></div>
+        <div class="brand"><img src="./assets/chime.png" alt="chime"></div>
+        <div class="brand"><img src="./assets/n26.png" alt="n26"></div>
+        <div class="brand"><img src="./assets/brex.png" alt="brex"></div>
+        <div class="brand"><img src="./assets/deel.png" alt="deel"></div>
+        <div class="brand"><img src="./assets/gusto.png" alt="gusto"></div>
+      </div>
+    </section>
+
+    <!-- Slider section & _sliderSection.scss -->
+    <section class="slider-section">
+      <h2>State of USA</h2>
+      <select>
+        <option value="2024">2024</option>
+      </select>
+      <p>Click through the slides or download the report to view natively on your device.</p>
+      <div class="slider">
+        <div class="slide"><img src="./assets/sl1.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl2.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl3.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl1.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl2.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl3.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl1.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl2.png" alt="slide"></div>
+        <div class="slide"><img src="./assets/sl3.png" alt="slide"></div>
+      </div>
+      <div class="slide-buttons">
+        <div class="arrow">
+          <button id="left">
+            <img src="./assets/left-arrow.png" alt="left">
+          </button>
+          <button id="right">
+            <img src="./assets/right-arrow.png" alt="right">
+          </button>
+          <p>Pages</p>
+          <select name="" id="">
+            <option value="1">1 and 2</option>
+          </select>
+          <p>of 37</p>
+        </div>
+        <div class="btn">
+          <button>Download the 2023 Report</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories section & _stories.scss -->
+    <section class="stories-section">
+      <div class="headline">
+        <h2>Stories & Ideas</h2>
+        <p>The latest news and updates</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-content">
+            <img src="./assets/img1.png" alt="user">
+            <div> 
+              <p class="name">By: Sahabuddin Sagor</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia.</p>
+            </div>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <img src="./assets/img2.png" alt="user">
+            <div>
+              <p class="name">By: Nayem Khan</p>
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+            <button>Read More</button>
+          </div>         
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <img src="./assets/img1.png" alt="user">
+            <div>
+              <p class="name">By: Sahabuddin Sagor</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia.</p>
+            </div>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="card mr">
+          <div class="card-content">
+            <img src="./assets/img1.png" alt="user">
+            <div>
+              <p class="name">By: Sahabuddin Sagor</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia.</p>
+            </div>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="card mr">
+          <div class="card-content">
+            <img src="./assets/img2.png" alt="user">
+            <div>
+              <p class="name">By: Nayem Khan</p>
+              <p>Key Takeaways from Robotics Invest 2023</p>
+            </div>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="card mr">
+          <div class="card-content">
+            <img src="./assets/img1.png" alt="user">
+            <div>
+              <p class="name">By: Shagor Sahabuddin</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia.</p>
+            </div>
+            <button>Read More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- This is line and style provide in index.scss -->
+    <section class="line">
+      <div></div>
+    </section>
+
+    <!-- About section & _about.scss -->
+    <section class="about-section">
+      <div class="about-content">
+        <h2>About WPPOOL</h2>
+        <h3>Investing in wppool for over 50 years</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.</p>
+        <button>Contact WPPOOL</button>
+      </div>
+      <img src="./assets/about.png" alt="about">
+    </section>
+
+    <!-- This is line and style provide in index.scss -->
+    <section class="line">
+      <div></div>
+    </section>
+
+    <!-- Portfolio companies & _portfolioCompanies.scss -->
+    <section class="portfolio-companies">
+      <h2>Selected WPPOOL Portfolio Companies</h2>
+      <div class="logos">
+        <div class="logo">
+          <img src="./assets/companies/ali.png" alt="alibaba">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/vend.png" alt="vendr">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/vest.png" alt="vestwell">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/snapdocs.png" alt="snapdocs">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/vend.png" alt="vendr">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/snapdocs.png" alt="snapdocs">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/toa.png" alt="toast">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/conn.png" alt="connect">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/conn.png" alt="conn">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/min.png" alt="min">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/fly.png" alt="fly">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/Quo.png" alt="quo">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/spen.png" alt="spen">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/not.png" alt="not">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/recurly.png" alt="recurly">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/fire.png" alt="fire">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/ken.png" alt="ken">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/fut.png" alt="fut">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/arg.png" alt="arg">
+        </div>
+        <div class="logo">
+          <img src="./assets/companies/snap.png" alt="snapsheet">
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section & _footer.scss -->
+    <footer class="footer-section">
+      <div class="content">
+        <h3>Experience remarkable 
+          WordPress products with a 
+          new level of power, beauty, 
+          and human-centered designs.
+        </h3>
+        <div>
+          <span>©2024 Terms of Use Privacy Policy</span>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaera
+            
+          </p>
+        </div>
+      </div>
+      <div class="links">
+        <p>Jump to</p>
+        <p>About Us</p>
+        <p>Portfolio</p>
+        <p>News</p>
+        <p>Stories</p>
+        <p>Jobs</p>
+        <p>About Us</p>
+      </div>
+      <div class="address-section">
+        <div class="address">
+          <h4>Cambridge</h4>
+          <p>70728 Yost Burg, North Magdaleneview, UT 97952-2814</p>
+        </div>
+        <div class="small-line"></div>
+        <div class="address">
+          <h4>London</h4>
+          <p>Suite 292 903 Stehr Streets, 
+            Langworthtown, SC 94577-9465</p>
+        </div>
+        <div class="small-line"></div>
+        <div class="address">
+          <h4>San Francisco</h4>
+          <p>19837 Gilberto Lodge, Lake Kendallville, Colorado - 97392, Bhutan</p>
+        </div>
+        <div class="small-line"></div>
+        <div class="social">
+          <img src="./assets/linkedin.png" alt="linkedin">
+          <img src="./assets/twitter.png" alt="twitter">
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
